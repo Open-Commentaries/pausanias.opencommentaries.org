@@ -3,6 +3,8 @@ import { mdsvex } from 'mdsvex';
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
+const BASE_PATH = process.argv.includes('dev') ? '' : process.env.BASE_PATH;
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	preprocess: [vitePreprocess(), mdsvex()],
@@ -11,7 +13,7 @@ const config = {
 			precompress: true
 		}),
 		paths: {
-			base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
+			base: BASE_PATH
 		}
 	},
 	extensions: ['.svelte', '.svx']

@@ -2,6 +2,8 @@ import fs from 'node:fs';
 import frontMatter from 'front-matter';
 import rehypeRaw from 'rehype-raw';
 import rehypeStringify from 'rehype-stringify';
+// @ts-expect-error Typing isn't available for rehype-urls
+import rehypeUrls from 'rehype-urls';
 import remarkGfm from 'remark-gfm';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
@@ -21,9 +23,20 @@ const MARKDOWN_PIPELINE = unified()
 	.use(remarkGfm)
 	.use(remarkRehype, { allowDangerousHtml: true })
 	.use(rehypeRaw)
+	.use(rehypeUrls, addBasePath)
 	.use(rehypeStringify);
 
 let tableOfContents: PassageConfig[] | null = null;
+
+/**
+ * We need to rewrite image paths in the commentaries markdown
+ * for remote deployment.
+ */
+function addBasePath(url: URL) {
+	if (url.pathname?.startsWith('/commentaries/img/media') && !process.argv.includes('dev')) {
+		return `${process.env.BASE_PATH || ''}${url.pathname}`;
+	}
+}
 
 function createTableOfContents(paragraphUrns: CTS_URN[]) {
 	if (tableOfContents) {
