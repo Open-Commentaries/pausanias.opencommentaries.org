@@ -44,7 +44,13 @@
 
 	<section class="mx-4 flex-2">
 		{#each criticalText as textBlock (textBlock?.urn)}
-			<div class="pt-2 text-justify" id={textBlock?.urn}>{@html textBlock?.body}</div>
+			<div
+				class="critical-text pt-2 text-justify"
+				id={textBlock?.urn}
+				data-location={new CTS_URN(textBlock?.urn as string).passageComponent}
+			>
+				{@html textBlock?.body}
+			</div>
 		{/each}
 	</section>
 
@@ -56,63 +62,55 @@
 </div>
 
 <style lang="postcss">
-  :global {
-    .entity {
-      padding: 2px;
-      background-color: var(--color-green-500);
-    }
+	.critical-text::before {
+		color: var(--color-neutral-500);
+		content: attr(data-location);
+		float: left;
+		margin-right: 0.5rem;
+		font-size: smaller;
+		font-weight: bold;
+	}
 
-    .entity[data-entitytype='LOC'] {
-      background-color: var(--color-yellow-400);
-    }
+	:global {
+		/* Style the footnotes section. */
+		.footnotes {
+			font-size: smaller;
+			color: var(--color-neutral-500);
+			border-top: 1px solid var(--color-neutral-800);
+		}
 
-    .entity[data-entitytype='MISC'] {
-      background-color: var(--color-slate-300);
-    }
+		/* Hide the section label for visual users. */
+		.sr-only {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			padding: 0;
+			overflow: hidden;
+			clip: rect(0, 0, 0, 0);
+			word-wrap: normal;
+			border: 0;
+		}
 
-    .entity[data-entitytype='PER'] {
-      background-color: var(--color-blue-200);
-    }
+		.footnotes li {
+			display: flex;
+			padding-top: 0.5rem;
+		}
 
-    /* Style the footnotes section. */
-    .footnotes {
-      font-size: smaller;
-      color: var(--color-neutral-500);
-      border-top: 1px solid var(--color-neutral-800);
-    }
+		.footnotes li a:not(.entity) {
+			align-items: center;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			margin-left: 0.5rem;
+		}
 
-    /* Hide the section label for visual users. */
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      word-wrap: normal;
-      border: 0;
-    }
+		/* Place `[` and `]` around footnote references. */
+		[data-footnote-ref]::before {
+			content: '[';
+		}
 
-    .footnotes li {
-      display: flex;
-      padding-top: 0.5rem;
-    }
-
-    .footnotes li a {
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      margin-left: 0.5rem;
-    }
-
-    /* Place `[` and `]` around footnote references. */
-    [data-footnote-ref]::before {
-      content: '[';
-    }
-
-    [data-footnote-ref]::after {
-      content: ']';
-    }
-  }
+		[data-footnote-ref]::after {
+			content: ']';
+		}
+	}
 </style>
