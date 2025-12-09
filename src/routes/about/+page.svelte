@@ -82,13 +82,11 @@
                 We would also like to thank Anna Foka, Elton Barker, Brady Kiesling, and the rest of
                 the <a href="https://www.periegesis.org/" aria-label="Digital Periegesis">
                   Digital Periegesis</a
-                > team for allowing us to use their data for tagged persons and places.
-              </p>
-
-              <p>
-                Their project, &lapos;Time and People in Pausanias’s <em>Description of Greece</em
-                >&rapos; was funded in part by a Swedish research council grant (Vetenskapsrådet
-                project no: 2021-02799).
+                >
+                team for allowing us to use their data for tagged persons and places. Their project,
+                &ldquo;Time and People in Pausanias’s <em>Description of Greece</em>&rdquo; was
+                funded in part by a Swedish research council grant (Vetenskapsrådet project no:
+                2021-02799).
               </p>
 
               <p>
