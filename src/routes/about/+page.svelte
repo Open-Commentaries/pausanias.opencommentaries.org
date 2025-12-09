@@ -68,6 +68,10 @@
                   >Dean's Fund for Promising Scholarship</a
                 > in the Faculty of Arts and Sciences at Harvard University.
               </p>
+              <p>
+                We would especially like to thank Claudine Gay, who as the Edgerley Family Dean of
+                the Faculty of Arts and Sciences first recognized the potential of this project.
+              </p>
             </section>
 
             <section>
