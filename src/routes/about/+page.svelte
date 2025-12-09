@@ -68,9 +68,40 @@
                   >Dean's Fund for Promising Scholarship</a
                 > in the Faculty of Arts and Sciences at Harvard University.
               </p>
+            </section>
+
+            <section>
+              <h2>Special Thanks</h2>
               <p>
-                We would especially like to thank Claudine Gay, who as the Edgerley Family Dean of
-                the Faculty of Arts and Sciences first recognized the potential of this project.
+                We would especially like to thank Professor Claudine Gay, who as the Edgerley Family
+                Dean of the Faculty of Arts and Sciences first recognized the potential of this
+                project.
+              </p>
+
+              <p>
+                We would also like to thank Anna Foka, Elton Barker, Brady Kiesling, and the rest of
+                the <a href="https://www.periegesis.org/" aria-label="Digital Periegesis">
+                  Digital Periegesis</a
+                > team for allowing us to use their data for tagged persons and places.
+              </p>
+
+              <p>
+                Their project, &lapos;Time and People in Pausanias’s <em>Description of Greece</em
+                >&rapos; was funded in part by a Swedish research council grant (Vetenskapsrådet
+                project no: 2021-02799).
+              </p>
+
+              <p>
+                Additionally, we would like to thank Chiara Palladino and Tariq Yousef for their
+                support using their named entity classification model. Named entity classification
+                was performed using the <a
+                  href="https://huggingface.co/UGARIT/flair_grc_bert_ner"
+                  aria-label="UGARIT/flair_grc_bert_ner">UGARIT/flair_grc_bert_ner</a
+                > model published on HuggingFace.
+              </p>
+
+              <p>
+                Special thanks are also due to Leonard Muellner and Noel Spencer, ποιμένες ἔργων.
               </p>
             </section>
 
