@@ -1,13 +1,8 @@
 <script lang="ts">
-  import { resolve } from "$app/paths";
-
   import nafLogo from "$lib/assets/new_alexandria_foundation_logo.png";
   import titlePageImage from "$lib/assets/pausanias-title-page.jpg";
-
-  import Header from "$lib/components/Header.svelte";
 </script>
 
-<Header />
 
 <div class="bg-white dark:bg-gray-900">
   <main>
