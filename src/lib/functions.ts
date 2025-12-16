@@ -23,7 +23,6 @@ const MARKDOWN_PIPELINE = unified()
 	.use(remarkGfm)
 	.use(remarkRehype, { allowDangerousHtml: true })
 	.use(rehypeRaw)
-	.use(rehypeUrls, addBasePath)
 	.use(rehypeStringify);
 
 let tableOfContents: PassageConfig[] | null = null;

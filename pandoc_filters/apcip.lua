@@ -33,8 +33,6 @@ function Str(str)
 
     if location ~= nil then
         local citation = "@" .. urn .. ":" .. location
-        currentUrn = citation
-        tokens = {}
 
         return {
             pandoc.Str("---"),
